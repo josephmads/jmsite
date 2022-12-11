@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<style>  
+.homepage {
+    margin: 30px;
+}
+</style>
+
+<div class="homepage">
+    <h2>Hello</h2>
+    <br>
+    <img src="{% static 'images/jm_headshot.png' %}" alt="pixelated Joseph Madsen" width="250" height="250">
+    <br>
+    <br>
+    <p>My name is Joseph Madsen.</p>
+    <p>Go <a href="{% url 'blog:index' %}">here</a> to read my blog.</p>
+</div>
+
+{% endblock content %}
+    

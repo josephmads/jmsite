@@ -1,0 +1,33 @@
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    top: 0px;
+    cursor: pointer;
+}
+
+.nav-list {
+    width: 50%;
+    display: flex;
+}
+
+.nav-list li {
+    list-style: none;
+    padding: 5px 10px;
+}
+
+.nav-list li a {
+    text-decoration: none;
+    color: white;
+}
+
+.nav-list li a:hover {
+    color: black;
+}
+
+.background {
+    background: rgba(134, 54, 4, 0.65);
+    background-blend-mode: darken;
+    background-size: cover;
+}

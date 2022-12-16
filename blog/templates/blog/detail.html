@@ -10,7 +10,7 @@
     <div class="container-sm">
         <h3>{{ post.title }}</h3>
         <p class="text-muted small">{{ post.published }}</p>
-        <p class="word-wrap" style="width: 50rem;"> {{ post.text | to_markdown | safe }}</p>
+        <p class="word-wrap" style="width: 100rem;"> {{ post.text | to_markdown | safe }}</p>
         <br></br>
         <a href="{% url 'blog:index' %}" class="btn btn-primary">Go Back</a>
     </div>

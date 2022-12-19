@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from .models import Post
+from django.shortcuts import get_object_or_404, render
+from .models import Post, Tag
 
 
 def home(request):
@@ -14,3 +14,12 @@ def detail(request, slug):
     post = Post.objects.get(slug=slug)
     context = {'post': post}
     return render(request, 'blog/detail.html', context)
+
+def list_tags(request, tag_id):
+    tag = get_object_or_404(Tag, id=tag_id)
+    posts = Post.objects.filter(tags=tag)
+    context = {
+        'tag_name': tag.name,
+        'posts': posts
+    }
+    return render(request, 'blog/index.html', context)

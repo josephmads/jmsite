@@ -7,14 +7,21 @@
 
     <link rel="stylesheet" href="{% static 'css/codehilite.css' %}">
 
-    <h2 class="display-2">My Blog</h2>
+    <h2 class="display-2">The Blog</h2>
     <br></br>
+
+    {% if tag_name %}
+        <h1>Tag: {{tag_name}}</h1>
+    {% else %}
+        <h1>All Posts</h1>
+    {% endif %}
+
     {% for post in posts %}
-    <div class="card m-4" style="width: 25rem;">
+    <div class="card m-4" style="width: 18rem;">
         <div class="card-body">
             <h5 class="card-title">{{ post.title }}</h5>
             <p class="card-text text-muted small">{{ post.published }}</p>
-            <p class="card-text">{{ post.text | to_markdown | safe | truncatechars:50 }}</p>
+            <p class="card-text">{{ post.text | to_markdown | safe | truncatechars:75 }}</p>
             <a href="{% url 'blog:detail' post.slug %}" class="btn btn-primary">Read More</a>
         </div>
     </div>

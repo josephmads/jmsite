@@ -3,7 +3,7 @@ from blog.models import Post, Tag
 
 # Register your models here.
 class PostAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'published', 'text', 'tags')
+    list_display = ('title', 'slug', 'published')
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Tag)

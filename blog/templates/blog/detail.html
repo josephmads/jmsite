@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="{% static 'css/codehilite.css' %}">
 
     <div class="container-sm">
-        <h3>{{ post.title }}</h3>
+        <h1>{{ post.title }}</h1>
         <div>
             {% for tag in post.tags.all %}
             <a href="{% url 'blog:tag' tag.id %}" class="badge text-white bg-dark">
@@ -19,7 +19,7 @@
         <p class="text-muted small">{{ post.published }}</p>
         <p class="word-wrap" style="width: 80rem;"> {{ post.text | to_markdown | safe }}</p>
         <br></br>
-        <a href="{% url 'blog:index' %}" class="btn btn-primary">Go Back</a>
+        <a href="{% url 'blog:index' %}" class="btn btn-dark">Go Back</a>
     </div>
 
 {% endblock content %}

@@ -1,32 +1,39 @@
 from django.shortcuts import get_object_or_404, render
-from django.views import generic
+from django.views.generic import ListView, TemplateView
+from django.core.paginator import Paginator
 from .models import Post, Tag
 
 
 def home(request):
+    """View function to display the home page."""
     return render(request, 'blog/home.html',)
 
-# def index(request):
-#     posts = Post.objects.all()
-#     context = {'posts': posts}
-#     return render(request, 'blog/index.html', context)
-
-class Index(generic.ListView):
+class Index(ListView):
+    """Class based view that lists blog posts and all tags."""
     model = Post
+    extra_context = {'tags': Tag.objects.all().order_by('name')}
     template_name = 'blog/index.html'
     ordering = ['-published']
     paginate_by = 5
 
 def detail(request, slug):
+    """View function to display blog detail page."""
     post = Post.objects.get(slug=slug)
     context = {'post': post}
     return render(request, 'blog/detail.html', context)
 
 def list_tags(request, tag_id):
+    """View function for displaying tags on blog posts."""
     tag = get_object_or_404(Tag, id=tag_id)
-    posts = Post.objects.filter(tags=tag)
+    tags = Tag.objects.all().order_by('name')
+    posts = Post.objects.filter(tags=tag).order_by('-published')
     context = {
         'tag_name': tag.name,
-        'posts': posts
+        'tags': tags,
+        'posts': posts,
     }
     return render(request, 'blog/index.html', context)
+
+class Links(TemplateView):
+    """Class based view to display Links page."""
+    template_name = 'blog/links.html'

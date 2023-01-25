@@ -7,19 +7,18 @@
 
     <link rel="stylesheet" href="{% static 'css/codehilite.css' %}">
 
-    <div class="container-sm">
+    <div class="container">
         <h1>{{ post.title }}</h1>
         <div>
             {% for tag in post.tags.all %}
-            <a href="{% url 'blog:tag' tag.id %}" class="badge text-white bg-dark">
-            {{tag}}
-            </a>
+            <a class="tag" href="{% url 'blog:tag' tag.id %}">{{ tag }}</a>
             {% endfor %}
         </div>
         <p class="text-muted small">{{ post.published }}</p>
         <p class="word-wrap" style="width: 80rem;"> {{ post.text | to_markdown | safe }}</p>
-        <br></br>
-        <a href="{% url 'blog:index' %}" class="btn btn-dark">Go Back</a>
+        <br>
+        <a href="{% url 'blog:index' %}" class="vt btn-peru">Go Back</a>
+        <div class="spacer-lg"></div>
     </div>
 
 {% endblock content %}

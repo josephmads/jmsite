@@ -5,41 +5,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <!--Bootstrap CSS-->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
                 
 {% block navbar %}
-    <nav class="navbar background">
+    <nav class="navbar nav-background">
         <ul class="nav-list">
-            <li><a href="{% url 'home' %}">JM</a></li>
-            <li><a href="{% url 'blog:index' %}">BLOG</a></li>
+            <li class="vt"><a href="{% url 'home' %}">jm</a></li>
+            <li class="vt"><a href="{% url 'blog:index' %}">blog</a></li>
+            <li class="vt"><a href="{% url 'blog:links' %}">links</a></li>
         </ul>
     </nav>
-    <div class="spacer"></div>
 {% endblock navbar %}
-
+    
 
 {% block content %}
     
 {% endblock content %}
+
 
 {% block pagination %}
     {% if is_paginated %}
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
+                    <a class="btn-black" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
                 {% endif %}
                 <span class="page-current">
-                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
+                    page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
                 </span>
                 {% if page_obj.has_next %}
-                    <a href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
+                    <a class="btn-black" href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
                 {% endif %}
             </span>
         </div>

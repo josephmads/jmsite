@@ -7,38 +7,52 @@
 
     <link rel="stylesheet" href="{% static 'css/codehilite.css' %}">
 
-    <div class="container-sm">
-        <h1 class="vt">The Blog</h1>
-        <div class="spacer"></div>
+    <div class="container">
+        <div class="row">
+            <div class="column-1">
+                <h1 class="vt vt-shadow">The Blog</h1>
 
-        {% if tag_name %}
-            <h2>Tag: {{tag_name}}</h2>
-            
-            {% for post in posts %}
-            <div class="card m-4" style="width: 18rem;">
-                <div class="card-body">
-                    <h5 class="card-title">{{ post.title }}</h5>
-                    <p class="card-text text-muted small">{{ post.published }}</p>
-                    <p class="card-text">{{ post.text | to_markdown | safe | truncatechars:75 }}</p>
-                    <a href="{% url 'blog:detail' post.slug %}" class="btn btn-dark">Read More</a>
+                {% if tag_name %}
+                <div class="container">
+                    <h2>Tag: <em style="font-weight: lighter;">{{tag_name}}</em></h2>
+                    
+                    {% for post in posts %}
+                    <div class="box" style="width: 35rem;">
+                        <h3 class="title">{{ post.title }}</h3>
+                        <p class="text-muted small">{{ post.published }}</p>
+                        <p class="card-text">{{ post.text | to_markdown | safe | truncatechars:100 }}</p>
+                        <a href="{% url 'blog:detail' post.slug %}" class="vt btn-peru">Read More</a>
+                    </div>
+                    {% endfor %}
                 </div>
+
+                {% else %}
+                <div class="container">
+                    <h2>All Posts</h2>
+
+                    {% for post in post_list %}
+                    <div class="box" style="width: 35rem;">
+                        <h3 class="title">{{ post.title }}</h3>
+                        <p class="text-muted small">{{ post.published }}</p>
+                        <p class="card-text">{{ post.text | to_markdown | safe | truncatechars:100 }}</p>
+                        <a href="{% url 'blog:detail' post.slug %}" class="vt btn-peru">Read More</a>
+                    </div>
+                    {% endfor %}
+                </div>    
+                {% endif %}  
             </div>
-            {% endfor %}
 
-        {% else %}
-            <h2>All Posts</h2>
-        {% endif %}
-
-        {% for post in post_list %}
-        <div class="card m-4" style="width: 18rem;">
-            <div class="card-body">
-                <h5 class="card-title">{{ post.title }}</h5>
-                <p class="card-text text-muted small">{{ post.published }}</p>
-                <p class="card-text">{{ post.text | to_markdown | safe | truncatechars:75 }}</p>
-                <a href="{% url 'blog:detail' post.slug %}" class="btn btn-dark">Read More</a>
+            <div class="column-2">
+                <h1 class="vt vt-shadow">Tags</h1>
+                    <div class="container">
+                        
+                        {% for tag in tags %}
+                            <p><a class="tag" href="{% url 'blog:tag' tag.id %}">{{ tag }}</a></p>
+                        {% endfor %}
+                            
+                    </div>
             </div>
         </div>
-        {% endfor %}
     </div>
 
 {% endblock content %}

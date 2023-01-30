@@ -5,17 +5,22 @@
 {% load static %}
 
 <div class="container-sm">
-    <h2>Hello</h2>
-    <br>
+    <h1 class="vt">Hello</h1>
+    <div class="spacer"></div>
     <img src="{% static 'images/jm_headshot.png' %}" alt="pixelated Joseph Madsen" width="250" height="250">
-    <br>
-    <br>
+    <div class="spacer"></div>
     <p>
         My name is Joseph Madsen.<br>
         On a good day, I'm a little above below average.<br>
-        Go <a href="{% url 'blog:index' %}">here</a> to read my blog.<br> 
-        I write about Python, Django, Linux, and whatever else pops into my head.
+        Go <a href="{% url 'blog:index' %}">here</a> to read my blog.<br><br> 
+        I write about the things I'm learning and have learned.<br> 
+        Right now that includes:<br>
     </p>
+    <ul>
+        <li>Python</li>
+        <li>Django</li>
+        <li>Linux</li>
+    </ul>
 </div>
 
 {% endblock content %}

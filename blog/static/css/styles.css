@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); 
+
+.vt {
+	font-family: 'VT323', monospace;
+}
+
 body { 
 	max-width: 1080px; 
 	margin: auto;
@@ -34,4 +40,9 @@ body {
     background: rgba(134, 54, 4, 0.65);
     background-blend-mode: darken;
     background-size: cover;
+}
+
+.spacer {
+    min-width: 10px;
+    min-height: 10px;
 }

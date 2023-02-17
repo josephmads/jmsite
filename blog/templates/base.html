@@ -28,6 +28,7 @@
 
 {% block pagination %}
     {% if is_paginated %}
+    <div class="container">
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
@@ -41,6 +42,7 @@
                 {% endif %}
             </span>
         </div>
+    </div>
     {% endif %}
 {% endblock pagination %}
     

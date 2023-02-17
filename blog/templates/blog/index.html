@@ -43,14 +43,14 @@
             </div>
 
             <div class="column-2">
-                <h1 class="vt vt-shadow">Tags</h1>
-                    <div class="container">
+                <div class="container">
+                    <h1 class="vt vt-shadow">Tags</h1>
+                    
+                    {% for tag in tags %}
+                        <p><a class="tag" href="{% url 'blog:tag' tag.id %}">{{ tag }}</a></p>
+                    {% endfor %}
                         
-                        {% for tag in tags %}
-                            <p><a class="tag" href="{% url 'blog:tag' tag.id %}">{{ tag }}</a></p>
-                        {% endfor %}
-                            
-                    </div>
+                </div>
             </div>
         </div>
     </div>

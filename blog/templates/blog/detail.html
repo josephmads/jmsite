@@ -14,8 +14,8 @@
             <a class="tag" href="{% url 'blog:tag' tag.id %}">{{ tag }}</a>
             {% endfor %}
         </div>
-        <p class="text-muted small">{{ post.published }}</p>
-        <p class="word-wrap" style="width: 80rem;"> {{ post.text | to_markdown | safe }}</p>
+        <p class="text-muted">{{ post.published }}</p>
+        {{ post.text | to_markdown | safe }}
         <br>
         <a href="{% url 'blog:index' %}" class="vt btn-peru">Go Back</a>
         <div class="spacer-lg"></div>

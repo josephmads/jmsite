@@ -11,10 +11,14 @@ def home(request):
 class Index(ListView):
     """Class based view that lists blog posts and all tags."""
     model = Post
-    extra_context = {'tags': Tag.objects.all().order_by('name')}
     template_name = 'blog/index.html'
     ordering = ['-published']
     paginate_by = 5
+
+    def get_context_data(self,**kwargs):
+        context = super(Index,self).get_context_data(**kwargs)
+        context['tags'] = Tag.objects.all().order_by('name')
+        return context
 
 def detail(request, slug):
     """View function to display blog detail page."""

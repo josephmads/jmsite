@@ -1,12 +1,14 @@
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView, TemplateView
-from django.core.paginator import Paginator
-from .models import Post, Tag
+from .models import *
 
 
 def home(request):
     """View function to display the home page."""
-    return render(request, 'blog/home.html',)
+    element = PageElement.objects.get(title='about')
+    context = {'element': element}
+    # breakpoint()
+    return render(request, 'blog/home.html', context)
 
 class Index(ListView):
     """Class based view that lists blog posts and all tags."""

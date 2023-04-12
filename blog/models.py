@@ -10,6 +10,7 @@ class Tag(models.Model):
     def __str__(self):
         return self.name
 
+
 class Post(models.Model):
     title = models.CharField(max_length=140)
     slug = models.SlugField(max_length=140, default='', null=True, blank=True, unique=True)
@@ -27,4 +28,13 @@ class Post(models.Model):
         value = self.title
         self.slug = slugify(value, allow_unicode=True)
         super().save(*args, **kwargs)
+
+
+class PageElement(models.Model):
+    """Model class to create editable page elements."""
+    title = models.CharField(max_length=140)
+    content = models.TextField()
+
+    def __str__(self):
+        return self.title
         

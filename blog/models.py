@@ -29,12 +29,4 @@ class Post(models.Model):
         self.slug = slugify(value, allow_unicode=True)
         super().save(*args, **kwargs)
 
-
-class PageElement(models.Model):
-    """Model class to create editable page elements."""
-    title = models.CharField(max_length=140)
-    content = models.TextField()
-
-    def __str__(self):
-        return self.title
         

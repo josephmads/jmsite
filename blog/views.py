@@ -1,32 +1,7 @@
 from django.shortcuts import get_object_or_404, render
-from django.views.generic import ListView, TemplateView
+from django.views.generic import ListView
 from .models import *
 
-###########
-# Favicon #
-###########
-from django.conf import settings
-from django.http import FileResponse, HttpRequest, HttpResponse
-from django.views.decorators.cache import cache_control
-from django.views.decorators.http import require_GET
-
-@require_GET
-@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # one day
-def favicon(request: HttpRequest) -> HttpResponse:
-    file = (settings.BASE_DIR / "static" / "favicon.png").open("rb")
-    return FileResponse(file)
-
-###############
-# End Favicon #
-###############
-
-
-def home(request):
-    """View function to display the home page."""
-    element = PageElement.objects.get(title='about')
-    context = {'element': element}
-    # breakpoint()
-    return render(request, 'blog/home.html', context)
 
 class Index(ListView):
     """Class based view that lists blog posts and all tags."""
@@ -58,6 +33,3 @@ def list_tags(request, tag_id):
     }
     return render(request, 'blog/index.html', context)
 
-class Links(TemplateView):
-    """Class based view to display Links page."""
-    template_name = 'blog/links.html'

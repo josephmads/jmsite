@@ -9,17 +9,21 @@ from .models import PageElement
 
 
 @require_GET
-@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)  # one day
+@cache_control(max_age=60 * 60 * 24, immutable=True, public=True)
 def favicon(request: HttpRequest) -> HttpResponse:
     file = (settings.BASE_DIR / "static" / "favicon.png").open("rb")
     return FileResponse(file)
 
 def home(request):
     """View function to display the home page."""
-    element = PageElement.objects.get(title='about')
-    context = {'element': element}
-    return render(request, 'base/home.html', context)
-
+    try:
+        element = PageElement.objects.get(title='about')
+        context = {'element': element}
+        return render(request, 'base/home.html', context)
+    except PageElement.DoesNotExist as err:
+        print('ERROR: ', str(err))
+        return render(request, 'base/home.html')
+        
 class Links(TemplateView):
     """Class based view to display Links page."""
     template_name = 'base/links.html'

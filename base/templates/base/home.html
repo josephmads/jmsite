@@ -11,7 +11,17 @@
         width="250" height="250" style="border-radius: 10px;">
     <div class="spacer"></div>
     <div class="vt" style="font-size: large; width: auto; max-width: 25rem;">
-        {{ element.content | to_markdown | safe }}
+        
+        {% if element.content %}
+            {{ element.content | to_markdown | safe }}
+        {% else %}
+            <p>
+                Hi, I'm Joseph Madsen.<br>
+                On a good day, I'm a little above below average.
+            </p>
+        {% endif %}
+            
+        
     </div>
 </div>
 

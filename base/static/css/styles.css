@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); 
 
 
+blockquote {
+    background: lightgray;
+    padding: 1px 1px 1px 15px;
+    border-radius: 5px;
+    max-width: 70ch;
+}
+
 body { 
-    max-width: 80vw;
-    padding-left: 10vw;
-    margin: 0;
+    max-width: 90vw;
+    padding-left: 5vw;
+    margin: auto;
     font-family: 'Open Sans', sans-serif;
     background: whitesmoke;
 }
@@ -12,7 +19,6 @@ body {
 .box { 
     border: 1px dashed black;
     border-radius: 5px;
-    /* max-width: 60vw; */
     padding-left: 1em;
     padding-bottom: 1em;
     margin-bottom: 1em;
@@ -77,7 +83,6 @@ code {
 }
 
 .codehilite {
-    margin-left: 1em;
     padding: 1em;
     border-radius: 5px;
     max-width: 70ch;

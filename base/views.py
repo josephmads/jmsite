@@ -23,7 +23,13 @@ def home(request):
     except PageElement.DoesNotExist as err:
         print('ERROR: ', str(err))
         return render(request, 'base/home.html')
-        
-class Links(TemplateView):
-    """Class based view to display Links page."""
-    template_name = 'base/links.html'
+
+def links(request):
+    """View function to display the home page."""
+    try:
+        element = PageElement.objects.get(title='links')
+        context = {'element': element}
+        return render(request, 'base/links.html', context)
+    except PageElement.DoesNotExist as err:
+        print('ERROR: ', str(err))
+        return render(request, 'base/links.html')

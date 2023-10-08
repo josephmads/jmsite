@@ -1,3 +1,6 @@
+from typing import Any
+from django.db.models import Q
+from django.db.models.query import QuerySet
 from django.shortcuts import get_object_or_404, render
 from django.views.generic import ListView
 from .models import *
@@ -14,6 +17,19 @@ class Index(ListView):
         context = super(Index,self).get_context_data(**kwargs)
         context['tags'] = Tag.objects.all().order_by('name')
         return context
+    
+class SearchResults(ListView):
+    """Class based view that lists search results"""
+    model = Post
+    template_name = 'blog/search_results.html'
+
+    def get_queryset(self):
+        query = self.request.GET.get('q')
+        object_list = Post.objects.filter(
+            Q(title__icontains=query) | Q(text__icontains=query)
+        )
+        return object_list
+    
 
 def detail(request, slug):
     """View function to display blog detail page."""

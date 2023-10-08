@@ -44,6 +44,11 @@
 
             <div class="column-2">
                 <div class="container">
+                    <h1 class="vt vt-shadow">Search</h1>
+                        <form action="{% url 'blog:search_results' %}" method="get">
+                            <input class="search-box" name="q" type="text" placeholder="...">
+                        </form>
+
                     <h1 class="vt vt-shadow">Tags</h1>
                     
                     {% for tag in tags %}

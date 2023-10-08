@@ -11,7 +11,8 @@
     <link rel="icon"href="{% static 'favicon.png' %}">
 </head>
 <body>
-                
+
+<div class="header">
 {% block navbar %}
     <nav class="navbar nav-background">
         <ul class="nav-list">
@@ -21,32 +22,39 @@
         </ul>
     </nav>
 {% endblock navbar %}
-    
+</div>    
 
+<div class="content">
 {% block content %}
     
 {% endblock content %}
-
+</div>
 
 {% block pagination %}
     {% if is_paginated %}
     <div class="container">
-        <div class="pagination">
-            <span class="page-links">
-                {% if page_obj.has_previous %}
-                    <a class="btn-black" href="{{ request.path }}?page={{ page_obj.previous_page_number }}">previous</a>
-                {% endif %}
-                <span class="page-current">
-                    page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
-                </span>
-                {% if page_obj.has_next %}
-                    <a class="btn-black" href="{{ request.path }}?page={{ page_obj.next_page_number }}">next</a>
-                {% endif %}
+        <span class="paginate">
+            {% if page_obj.has_previous %}
+                <a class="btn-black" href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><<<</a>
+            {% endif %}
+            <span class="page-current">
+                PAGE {{ page_obj.number }} OF {{ page_obj.paginator.num_pages }}
             </span>
-        </div>
+            {% if page_obj.has_next %}
+                <a class="btn-black" href="{{ request.path }}?page={{ page_obj.next_page_number }}">>>></a>
+            {% endif %}
+        </span>   
     </div>
     {% endif %}
 {% endblock pagination %}
-    
+
+<div class="footer">
+{% block footer %}
+<footer>
+    <code>Copyright &copy; Joseph Madsen</code>
+</footer>
+{% endblock footer %}
+</div>
+
 </body>
 </html>

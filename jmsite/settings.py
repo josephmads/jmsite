@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     # my apps
     'base.apps.BaseConfig',
     'blog.apps.BlogConfig',
+    'js.apps.JsConfig',
 ]
 
 MIDDLEWARE = [

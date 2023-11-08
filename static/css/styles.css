@@ -105,6 +105,20 @@ code {
     margin: 5px 10px 5px 20px;
 }
 
+.content {
+	min-height: calc(100vh - 180px);
+}
+
+.footer {
+	max-height: 80px;
+    padding: 20px;
+    float: right;
+}
+
+.header {
+	height: 80px;
+}
+
 .navbar {
     top: 0px; 
     width: 100%;
@@ -151,10 +165,29 @@ p {
     max-width: 45rem;
 }
 
+.paginate {
+    font-family: monospace;
+}
+
 .row:after {
     content: "";
     display: table;
     clear: both;
+}
+
+.search-box {
+    background-color: rgb(50, 50, 50);
+    border-color: lightgray;
+    border-radius: 10px;
+    border-width: 5px;
+    max-width: 13ch;
+    padding: 5px 5px 8px 8px;
+    color: orange;
+    text-shadow: 1px 1px 5px orangered;
+}
+
+.search-box:focus {
+    outline: 2px solid rgba(170, 101, 10, 0.5)
 }
 
 .spacer {

@@ -11,4 +11,5 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('links/', views.links, name='links'),
     path('blog/', include('blog.urls')),
+    path('js/', include('js.urls')),
 ]

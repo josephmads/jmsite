@@ -14,4 +14,5 @@ def to_markdown(text):
         'markdown.extensions.tables',
         'markdown.extensions.codehilite',
         'markdown.extensions.nl2br',
+        'markdown.extensions.smarty',
     ])

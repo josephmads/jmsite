@@ -18,6 +18,7 @@
         <ul class="nav-list">
             <li class="vt"><a href="{% url 'home' %}">jm</a></li>
             <li class="vt"><a href="{% url 'blog:index' %}">blog</a></li>
+            <!-- <li class="vt"><a href="{% url 'js:index' %}">js</a></li> -->
             <li class="vt"><a href="{% url 'links' %}">links</a></li>
         </ul>
     </nav>
@@ -51,7 +52,7 @@
 <div class="footer">
 {% block footer %}
 <footer>
-    <code>Copyright &copy; Joseph Madsen</code>
+    Copyright © Joseph Madsen {% now 'Y' %}
 </footer>
 {% endblock footer %}
 </div>

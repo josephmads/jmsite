@@ -1,17 +1,5 @@
 body {
     background: lightgreen;
+    color: blanchedalmond;
 }
 
-.content {
-	min-height: calc(100vh - 180px);
-}
-
-.footer {
-	max-height: 80px;
-    padding: 20px;
-    float: right;
-}
-
-.header {
-	height: 80px;
-}

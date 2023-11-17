@@ -10,7 +10,6 @@ blockquote {
 
 body { 
     max-width: 90vw;
-    padding-left: 5vw;
     margin: auto;
     font-family: 'Open Sans', sans-serif;
     background: whitesmoke;
@@ -83,7 +82,7 @@ code {
 }
 
 .codehilite {
-    padding: 1em;
+    padding: 3px 3px 3px 15px;
     border-radius: 5px;
     max-width: 70ch;
 }

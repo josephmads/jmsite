@@ -24,10 +24,11 @@ body {
 
 .box {
     background: #353535; 
-    border: 1px dashed lightgray;
     border-radius: 5px;
-    padding: 0rem 1rem 1rem;
+    padding: 0.1rem 1rem 1rem;
     margin-bottom: 1rem;
+    box-shadow: 
+    0px 0px 5px 1px peru inset;
 }
 
 .btn-black {
@@ -167,7 +168,8 @@ code {
 }
 
 .nav-toggle:hover {
-    background: orange;
+    background: white;
+    box-shadow: 0 0 8px white;
 }
 
 p {
@@ -251,5 +253,5 @@ p {
 }
 
 .vt-shadow {
-    text-shadow: 1px 1px 5px gray;
+    text-shadow: 1px 1px 5px rgb(219, 219, 219);
 }

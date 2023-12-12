@@ -1,32 +1,39 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); 
 
+a {
+    color: lightskyblue;
+}
+
+a:visited {
+    color: plum;
+}
 
 blockquote {
-    background: lightgray;
+    background: #353535;
     padding: 1px 1px 1px 15px;
     border-radius: 5px;
     max-width: 70ch;
 }
 
 body { 
-    max-width: 90vw;
     margin: auto;
     font-family: sans-serif;
+    background: #0d0d0d;
     color: whitesmoke;
-    background: rgb(32, 32, 32);
 }
 
-.box { 
-    border: 1px dashed black;
+.box {
+    background: #353535; 
     border-radius: 5px;
-    padding-left: 1em;
-    padding-bottom: 1em;
-    margin-bottom: 1em;
+    padding: 0.1rem 1rem 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 
+    0px 0px 5px 1px peru inset;
 }
 
 .btn-black {
     color: whitesmoke;
-    background-color: black;
+    background-color: #353535;
     padding: 5px;
     border-radius: 5px;
     text-decoration: none;
@@ -40,6 +47,10 @@ body {
     text-shadow:
     0 0 1px whitesmoke, 
     0 0 5px white;
+}
+
+.btn-black:visited {
+    color: whitesmoke;
 }
 
 .btn-peru {
@@ -60,6 +71,10 @@ body {
     0 0 5px white;
 }
 
+.btn-peru:visited {
+    color: whitesmoke;
+}
+
 .btn-wheat {
     color: black;
     background-color: wheat;
@@ -76,6 +91,10 @@ body {
     background-color: burlywood;
     text-decoration: none;
     text-shadow: 0 0 5px gray
+}
+
+.btn-wheat:visited {
+    color: black;
 }
 
 code {
@@ -106,60 +125,51 @@ code {
 }
 
 .content {
-	min-height: calc(100vh - 180px);
+    max-width: 90vw;
+    margin: auto;
+	min-height: calc(100vh - 9rem);
 }
 
 .footer {
     font-family: monospace;
-	max-height: 80px;
-    padding: 20px;
+    background: #353535;
+	height: 1.8rem;
+    padding: 1rem;
     text-align: center;
-}
-
-.header {
-	height: 80px;
 }
 
 .navbar {
     top: 0px; 
     width: 100%;
-}
-
-.nav-list {
-    list-style-type: none;
-    margin: 0;
-    padding: 1rem;
-    overflow: hidden;
-  }
-
-.nav-list li {
-    float: left;
-}
-
-.nav-list li a {
-    display: block;
-    color: whitesmoke;
+    background: #1e1e1e;
     text-align: center;
-    padding-left: 2rem;
-    text-decoration: none;
-    font-size: x-large;
-  }
+}
 
-.nav-list li a:hover {
+.nav-menu {
+    display: inline-block;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.nav-menu a { 
+    color: whitesmoke;
+    padding-left: 1.5rem;
+    text-decoration: none;    
+}
+
+.nav-menu a:hover {
     color: white;
     text-shadow: 0 0 5px white;
 }
 
-.nav-background {
-    background: rgb(170,100,10);
-    background: linear-gradient(90deg, 
-        rgba(170,100,10,0) 0%,
-        rgba(170,100,10,.3) 5%, 
-        rgba(170,100,10,.5) 10%, 
-        rgba(170,55,5,.8) 30%,
-        rgba(140,55,5,.8) 70%,    
-        rgba(170,100,10,.3) 90%, 
-        rgba(170,100,10,0) 100%);
+.nav-toggle {
+    background: whitesmoke;
+    border-radius: 25px;
+}
+
+.nav-toggle:hover {
+    background: white;
+    box-shadow: 0 0 8px white;
 }
 
 p {
@@ -168,6 +178,10 @@ p {
 
 .paginate {
     font-family: monospace;
+}
+
+#pagination {
+    margin: 1rem 5rem;
 }
 
 .row:after {
@@ -203,7 +217,7 @@ p {
 
 .tag {
     color: whitesmoke;
-    background-color: black;
+    background-color: peru;
     border-radius: 5px;
     font-size: small;
     font-family: monospace;
@@ -218,6 +232,10 @@ p {
     text-shadow:
     0 0 1px whitesmoke, 
     0 0 5px white;
+}
+
+.tag:visited {
+    color: whitesmoke;
 }
 
 .text-muted {
@@ -235,5 +253,5 @@ p {
 }
 
 .vt-shadow {
-    text-shadow: 1px 1px 5px gray;
+    text-shadow: 1px 1px 5px rgb(219, 219, 219);
 }

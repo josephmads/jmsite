@@ -1,18 +1,23 @@
 // Toggles between Light and Dark Mode
 const btn = document.getElementById("toggle-mode");
-const theme = document.querySelector("#theme-link")
+const themeLink = document.getElementById("theme-link");
 
-function darkMode() {
-  if (theme.getAttribute("href") == "{% static 'base/css/light-theme.css' %}") {
-    theme.href = "{% static 'base/css/dark-theme.css' %}";
+// Sets theme to Dark Mode and saves user selection to localStorage
+btn.addEventListener("click", () => {
+  if (themeLink.getAttribute("href") === "/static/base/css/light-theme.css") {
+    themeLink.href = "/static/base/css/dark-theme.css";
+    localStorage.setItem('theme', 'dark');
   } else {
-    theme.href = "{% static 'base/css/light-theme.css' %}";
+    themeLink.href = "/static/base/css/light-theme.css";
+    localStorage.setItem('theme', 'light');
   }
-  if (btn.innerHTML === "Dark Mode") {
-      btn.innerHTML = "Light Mode";
-  } else {
-      btn.innerHTML = "Dark Mode";
-  }
-}
+});
 
-btn.addEventListener("click", darkMode);
+// Loads user selection from localStorage
+window.onload = () => {
+  const savedTheme = localStorage.getItem('theme');
+  if (savedTheme) {
+      const themeLink = document.getElementById('theme-link');
+      themeLink.href = `/static/base/css/${savedTheme}-theme.css`;
+  }
+};

@@ -12,7 +12,8 @@ body {
     max-width: 90vw;
     margin: auto;
     font-family: sans-serif;
-    background: whitesmoke;
+    color: whitesmoke;
+    background: rgb(32, 32, 32);
 }
 
 .box { 

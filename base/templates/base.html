@@ -5,22 +5,25 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script async src="https://umami.josephmadsen.com/script.js" data-website-id="6157f757-ca1d-48eb-8d49-97af9c89a8d8"></script> 
+    <!-- <script async src="https://umami.josephmadsen.com/script.js" data-website-id="6157f757-ca1d-48eb-8d49-97af9c89a8d8"></script>  -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'base/css/style.css' %}">
+    <link id="theme-link" rel="stylesheet" href="{% static '/base/css/light-theme.css' %}">
     <link rel="icon"href="{% static 'favicon.png' %}">
 </head>
 <body>
 
 <div class="header">
 {% block navbar %}
-    <nav class="navbar nav-background">
-        <ul class="nav-list">
-            <li class="vt"><a href="{% url 'home' %}">jm</a></li>
-            <li class="vt"><a href="{% url 'blog:index' %}">blog</a></li>
-            <!-- <li class="vt"><a href="{% url 'js:index' %}">js</a></li> -->
-            <li class="vt"><a href="{% url 'links' %}">links</a></li>
-        </ul>
+    <nav class="navbar">
+        <div class="nav-menu">
+            <a class="vt" href="{% url 'home' %}">jm</a>
+            <a class="vt" href="{% url 'blog:index' %}">blog</a>
+            <a class="vt" href="{% url 'links' %}">links</a>
+            <a id="toggle-mode" href="#">
+                <img src="{% static 'base/images/toggle-theme-icon.png' %}" alt="half filled circle" 
+                width="20" height="20" class="nav-toggle">
+            </a>
+        </div>
     </nav>
 {% endblock navbar %}
 </div>    
@@ -33,7 +36,7 @@
 
 {% block pagination %}
     {% if is_paginated %}
-    <div class="container">
+    <div id="pagination">
         <span class="paginate">
             {% if page_obj.has_previous %}
                 <a class="btn-black" href="{{ request.path }}?page={{ page_obj.previous_page_number }}"><<<</a>
@@ -56,6 +59,8 @@
 </footer>
 {% endblock footer %}
 </div>
+
+<script src="{% static '/base/js/script.js' %}"></script>
 
 </body>
 </html>

@@ -1,0 +1,232 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap'); 
+
+
+blockquote {
+    background: lightgray;
+    padding: 1px 1px 1px 15px;
+    border-radius: 5px;
+    max-width: 70ch;
+}
+
+body { 
+    margin: auto;
+    font-family: sans-serif;
+    background: whitesmoke;
+}
+
+.box {
+    background: #f1efed; 
+    border: 1px dashed black;
+    border-radius: 5px;
+    padding: 0rem 1rem 1rem;
+    margin-bottom: 1rem;
+}
+
+.btn-black {
+    color: whitesmoke;
+    background-color: black;
+    padding: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: medium;
+    text-shadow: 0 0 5px gray;
+}
+
+.btn-black:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow:
+    0 0 1px whitesmoke, 
+    0 0 5px white;
+}
+
+.btn-peru {
+    color: black;
+    background-color: peru;
+    padding: 5px 10px 5px 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: large;
+    text-shadow: 0 0 5px gray;
+}
+
+.btn-peru:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow:
+    0 0 1px whitesmoke, 
+    0 0 5px white;
+}
+
+.btn-wheat {
+    color: black;
+    background-color: wheat;
+    padding: 5px 10px 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: x-large;
+    text-shadow: 0 0 5px gray;
+}
+
+.btn-wheat:hover {
+    color:black;
+    background-color: burlywood;
+    text-decoration: none;
+    text-shadow: 0 0 5px gray
+}
+
+code {
+    white-space: pre-wrap;
+}
+
+.codehilite {
+    padding: 3px 3px 3px 15px;
+    border-radius: 5px;
+    max-width: 70ch;
+}
+
+.column-1 {
+    float: left;
+    width: 65%;
+}
+
+.column-2 {
+    float: left;
+    width: 34%;
+    margin-right: 1%;
+    text-align: right;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 5px 10px 5px 20px;
+}
+
+.content {
+    max-width: 90vw;
+    margin: auto;
+	min-height: calc(100vh - 9rem);
+}
+
+.footer {
+
+    font-family: monospace;
+    background: lightgray;
+	height: 1.8rem;
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbar {
+    top: 0px; 
+    width: 100%;
+    background: #1e1e1e;
+    text-align: center;
+}
+
+.nav-menu {
+    display: inline-block;
+    font-size: 1.5rem;
+    padding: 1rem;
+}
+
+.nav-menu a { 
+    color: whitesmoke;
+    padding-left: 1.5rem;
+    text-decoration: none;    
+}
+
+.nav-menu a:hover {
+    color: white;
+    text-shadow: 0 0 5px white;
+}
+
+.nav-toggle {
+    background: whitesmoke;
+    border-radius: 25px;
+}
+
+.nav-toggle:hover {
+    background: orange;
+}
+
+p {
+    max-width: 45rem;
+}
+
+.paginate {
+    font-family: monospace;
+}
+
+#pagination {
+    margin: 1rem 5rem;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.search-box {
+    background-color: rgb(50, 50, 50);
+    border-color: lightgray;
+    border-radius: 10px;
+    border-width: 5px;
+    max-width: 13ch;
+    padding: 5px 5px 8px 8px;
+    color: orange;
+    text-shadow: 1px 1px 5px orangered;
+}
+
+.search-box:focus {
+    outline: 2px solid rgba(170, 101, 10, 0.5)
+}
+
+.spacer {
+    min-width: 10px;
+    min-height: 10px;
+}
+
+.spacer-lg {
+    min-width: 50px;
+    min-height: 50px;
+}
+
+.tag {
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 5px;
+    font-size: small;
+    font-family: monospace;
+    padding: 4px;
+    margin-right: 3px;
+    text-decoration: none;
+}
+
+.tag:hover {
+    color: whitesmoke;
+    text-decoration: none;
+    text-shadow:
+    0 0 1px whitesmoke, 
+    0 0 5px white;
+}
+
+.text-muted {
+    color: gray;
+    font-size: small;
+    font-family: monospace;
+}
+
+.title {
+    font-stretch: expanded;
+}
+
+.vt {
+	font-family: 'VT323', monospace;
+}
+
+.vt-shadow {
+    text-shadow: 1px 1px 5px gray;
+}
